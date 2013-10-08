@@ -4,7 +4,7 @@ if ($(window).width() < 626) {
 	var map = L.mapbox.map('map', 'brunodbo.map-8dbz5o8v').setView([54, -121], 6);
 } else {
 	// var map = new L.Map('map').setView([54,-121],7);
-	var map = L.mapbox.map('map', 'brunodbo.map-8dbz5o8v').setView([54, -121], 7);
+	var map = L.mapbox.map('map', 'brunodbo.map-8dbz5o8v').setView([54, -115], 6);
 }
 
 // Information for the base tile via Cloudmade
