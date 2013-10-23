@@ -1,23 +1,21 @@
 { "type": "FeatureCollection",
   "features": [
     { "type": "Feature",
-      "id": "urn:uuid:7c87d3e6-7969-44b2-9d23-97aaf5eb9ee0",
       "geometry": {
         "type": "Polygon",
         "coordinates": [ [50.4540707945637, -120.158459798617],[50.4540956720874, -120.158437460526],[50.4552222518011, -120.157421475613] ]
        },
       "properties": {
-        "parkName": "Name",
+        "Name": "ParkName",
       }
     },
     { "type": "Feature",
-      "id": "urn:uuid:83d8e8e2-e1d5-4457-844d-18eb2e5dc20a",
       "geometry": {
         "type": "Polygon",
         "coordinates": [ [48.8330627658199, -123.828834199401],[48.833045854744, -123.828842235269],[48.8330289849211, -123.828850527748] ]
        },
       "properties": {
-        "parkName": "Name",
+        "Name": "ParkName",
       }
     }
   ]
