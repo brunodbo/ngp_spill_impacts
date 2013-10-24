@@ -9,7 +9,7 @@ var parks_layer = L.geoJson(null, {
         }
     });
 
-$.getJSON('/js/bc_parks_ecores_topo.json', function (data) {
+$.getJSON('js/bc_parks_ecores_topo.json', function (data) {
     var parks_geojson = topojson.feature(data, data.objects.bc_parks_ecores);
     parks_layer.addData(parks_geojson);
 });
