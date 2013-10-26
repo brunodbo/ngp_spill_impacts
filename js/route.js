@@ -1,17 +1,8 @@
 /* Build GeoJSON object of proposed pipeline route lat/long coordinates, and add it to the map. */
 $(function() {
 
-// Set up GeoJSON
-var route_layer = L.geoJson();
-
-$.getJSON('js/route_data.json', function(data) {
-  route_layer.addData(data);
-  console.log(route_layer);
-});
-
 // Layer style and popup behaviour.
-var routeColor = "#ff7800";
-var routeHighlightColor = "#666";
+var routeColor = "#122128";
 var routeStyle = {
   "color": routeColor,
   "weight": 5,
@@ -32,7 +23,7 @@ function addHighlight(e) {
 
   layer.bindPopup(popup).openPopup();
   layer.setStyle({
-    color: routeHighlightColor,
+    opacity: 1,
   });
 
   if (!L.Browser.ie && !L.Browser.opera) {
@@ -45,7 +36,7 @@ function removeHighlight(e) {
 
   layer.closePopup();
   layer.setStyle({
-    color: routeColor,
+    opacity: 0.65,
   });
 
   if (!L.Browser.ie && !L.Browser.opera) {
@@ -64,9 +55,29 @@ function removeHighlight(e) {
 //   feature.closePopup();
 // }
 
-L.geoJson(route_layer, {
-  style: routeStyle,
-  onEachFeature: onEachFeature
-}).addTo(map);
+// L.geoJson(route_layer, {
+//   style: routeStyle,
+//   onEachFeature: onEachFeature
+// }).addTo(map);
+
+
+ var route_layer = L.geoJson(null, {
+    style: routeStyle,
+    onEachFeature: onEachFeature
+  });
+
+// var route_layer = L.geoJson();
+
+// $.getJSON('js/route_topo.json', function(data) {
+//   var route_geojson = topojson.feature(data, data.objects.route_data);
+//   route_layer.addData(route_geojson);
+// });
+
+$.getJSON('js/route_data.json', function(data) {
+  var route_geojson = data;
+  route_layer.addData(route_geojson);
+});
+
+map.addLayer(route_layer);
 
 });

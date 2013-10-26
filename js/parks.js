@@ -2,7 +2,7 @@ $(function() {
 
   var parks_layer = L.geoJson(null, {
     style: {
-      color: '#666',
+      color: '#19851c',
       weight: 1,
       opacity: 1,
       fillOpacity: 0.3
@@ -15,4 +15,5 @@ $(function() {
   });
 
   map.addLayer(parks_layer);
+
 });

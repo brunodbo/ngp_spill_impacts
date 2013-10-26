@@ -325,3 +325,44 @@ hr {
 	}
 
 }
+
+.legend-title {
+	margin-top: 0;
+}
+
+.legend-items {
+	list-style-type: none;
+	margin: 0;
+}
+
+.legend-icon {
+	display: inline-block;
+	margin-right: 15px;
+	margin-left: 5px;
+	width: 10px;
+	height: 10px;
+}
+
+.legend-risk .legend-icon {
+	background: url(../img/marker_sm.png) no-repeat left top;
+	height: 30px;
+	width: 20px;
+	margin-left: 0;
+	margin-right: 10px;
+}
+
+.legend-risk .legend-label {
+	vertical-align: top;
+}
+
+.legend-route .legend-icon {
+	background-color: #122128;
+}
+
+.legend-park .legend-icon {
+	background-color: #19851c;
+}
+
+.legend-source {
+	/*margin-top: 10px;*/
+}

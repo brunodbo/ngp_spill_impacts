@@ -30,19 +30,15 @@
 	<meta property="twitter:image" content="@TODO">
 
 	<!-- CSS -->
-	<link rel="stylesheet" href="css/leaflet.css" />
-	<link href="http://api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.css" rel="stylesheet" />
-	<!--[if lte IE 8]>
-		<link rel="stylesheet" href="css/leaflet.ie.css" />
-	<![endif]-->
+	<link href="http://api.tiles.mapbox.com/mapbox.js/v1.4.0/mapbox.css" rel="stylesheet" />
 	<link rel="stylesheet" href="css/bootstrap.min.css" />
 	<link rel="stylesheet" href="css/bootstrap-responsive.min.css" />
 	<link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 	<!-- Javascript -->
-	<script type="text/javascript" src="js/vendor/jquery/jquery-1.10.2.min.js"></script>
-	<script src="http://api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.js"></script>
+	<script src="http://api.tiles.mapbox.com/mapbox.js/v1.4.0/mapbox.js"></script>
+  <script type="text/javascript" src="js/vendor/jquery/jquery-1.10.2.min.js"></script>
   <script type="text/javascript" src="js/vendor/topojson/topojson.js"></script>
 	<!--<script type="text/javascript" src="js/leaflet.js"></script>-->
 	<script type="text/javascript" src="js/vendor/tabletop/tabletop.js"></script>
@@ -105,8 +101,18 @@
 	<div id="map">
 	</div>
 
+  <div id="legend-content" style="display: none;">
+    <h5 class='legend-title'>Map legend</h5>
+      <ul class="legend-items">
+        <li class="legend-park"><span class="legend-icon"></span><span class="legend-label">Protected area/park</span></li>
+        <li class="legend-route"><span class="legend-icon"></span><span class="legend-label">Proposed pipeline route</span></li>
+        <li class="legend-risk"><span class="legend-icon"></span><span class="legend-label">Protected area/park at risk in the event of a pipeline spill</span></li>
+      </ul>
+    <div class="legend-source">Source: <a href="http://www.raincoast.org/wp-content/uploads/Service-et-al-Enbridge-Pipeline-Parks-2012.pdf">Raincoast Conservation Foundation</a></div>
+  </div>
+
 	<script src="js/script.js"></script>
-  <script src="js/route.js"></script>
 	<script src="js/parks.js"></script>
+  <script src="js/route.js"></script>
 </body>
 </html>
