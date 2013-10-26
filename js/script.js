@@ -53,8 +53,7 @@ function startUpLeafet(tabletopData) {
     // Change 'Address', 'City', etc.
     // To match table column names in your table
     var popup = "<div class=popup_box" + "id=" + num + ">";
-    popup += "<div class='popup_box_header'><strong>" + dataOne + "</strong></div>";
-    popup += "<hr />";
+    popup += "<h4 class='popup_box_header'>" + dataOne + "</h4>";
     popup += "</div>";
     // Add to our marker
     marker.bindPopup(popup);
