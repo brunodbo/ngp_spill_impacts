@@ -11,58 +11,58 @@ if ($(window).width() < 626) {
 
 
 // Initialize Tabletop: get our spreadsheet data.
-var jqueryNoConflict = jQuery;
-jqueryNoConflict(document).ready(function(){
-  initializeTabletopObject('0AoyLypQrLn3xdHo4cjNpWkhpcDhYYXZ1eElYYWFaUFE');
-});
+// var jqueryNoConflict = jQuery;
+// jqueryNoConflict(document).ready(function(){
+//   initializeTabletopObject('0AoyLypQrLn3xdHo4cjNpWkhpcDhYYXZ1eElYYWFaUFE');
+// });
 
 // Pull data from Google spreadsheet, and push to our startUpLeaflet function.
-function initializeTabletopObject(dataSpreadsheet){
-  Tabletop.init({
-    key: dataSpreadsheet,
-    callback: startUpLeafet,
-    simpleSheet: true,
-    debug: false
-  });
-}
+// function initializeTabletopObject(dataSpreadsheet){
+//   Tabletop.init({
+//     key: dataSpreadsheet,
+//     callback: startUpLeafet,
+//     simpleSheet: true,
+//     debug: false
+//   });
+// }
 
 // Get the data from our spreadsheet, and pass it on Leaflet.
-function startUpLeafet(tabletopData) {
-  // Tabletop creates arrays out of our data.
-  // We'll loop through them and create markers for each.
-  for (var num = 0; num < tabletopData.length; num ++) {
-    // Our table columns
-    var dataOne = tabletopData[num].park;
+// function startUpLeafet(tabletopData) {
+//   // Tabletop creates arrays out of our data.
+//   // We'll loop through them and create markers for each.
+//   for (var num = 0; num < tabletopData.length; num ++) {
+//     // Our table columns
+//     var dataOne = tabletopData[num].park;
 
-    // Pull in our lat, long information
-    var dataLat = tabletopData[num].latitude;
-    var dataLong = tabletopData[num].longitude;
+//     // Pull in our lat, long information
+//     var dataLat = tabletopData[num].latitude;
+//     var dataLong = tabletopData[num].longitude;
 
-    // Add to our marker
-    marker_location = new L.LatLng(dataLat, dataLong);
-    // Create the marker
-    marker = new L.marker(marker_location, {
-      icon: L.mapbox.marker.icon({
-        'marker-symbol': 'park',
-        // 'marker-size': 'large',
-        'marker-color': '#ff0000'
-      })
-    });
+//     // Add to our marker
+//     marker_location = new L.LatLng(dataLat, dataLong);
+//     // Create the marker
+//     marker = new L.marker(marker_location, {
+//       icon: L.mapbox.marker.icon({
+//         'marker-symbol': 'park',
+//         // 'marker-size': 'large',
+//         'marker-color': '#ff0000'
+//       })
+//     });
     
-    // Create the popup
-    // Change 'Address', 'City', etc.
-    // To match table column names in your table
-    var popup = "<div class=popup_box" + "id=" + num + ">";
-    popup += "<h4 class='popup_box_header'>" + dataOne + "</h4>";
-    popup += "</div>";
-    // Add to our marker
-    marker.bindPopup(popup);
+//     // Create the popup
+//     // Change 'Address', 'City', etc.
+//     // To match table column names in your table
+//     var popup = "<div class=popup_box" + "id=" + num + ">";
+//     popup += "<h4 class='popup_box_header'>" + dataOne + "</h4>";
+//     popup += "</div>";
+//     // Add to our marker
+//     marker.bindPopup(popup);
 
-    // Add marker to our to map
-    // map.addLayer(marker);
-    marker.addTo(map);
-  }
-};
+//     // Add marker to our to map
+//     // map.addLayer(marker);
+//     marker.addTo(map);
+//   }
+// };
 
 $(function() {
   var legendContent = $('#legend-content').html();

@@ -5,7 +5,7 @@ $(function() {
 var routeColor = "#122128";
 var routeStyle = {
   "color": routeColor,
-  "weight": 5,
+  "weight": 3,
   "opacity": 0.65
 };
 var popup = L.popup({closeButton: false})
@@ -27,7 +27,7 @@ function addHighlight(e) {
   });
 
   if (!L.Browser.ie && !L.Browser.opera) {
-    layer.bringToFront();
+    layer.bringToBack();
   }
 }
 
