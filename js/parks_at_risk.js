@@ -1,5 +1,7 @@
 $(function() {
 
+  'use strict';
+
   function onEachFeature(feature, layer) {
     var parkName = feature.properties.park_name;
     var popup = L.popup().setContent(parkName);
@@ -16,20 +18,9 @@ $(function() {
     onEachFeature: onEachFeature
   });
 
-  // AJAX callback
-  function addParksAtRiskData(data) {
+  $.getJSON('js/parks_at_risk_data.json', function(data) {
     parksAtRiskLayer.addData(data);
-  }
+  });
 
-  function parksAtRisk(add_parks_at_risk_data) {
-    $.getJSON('js/parks_at_risk_data.json', function(data) {
-      addParksAtRiskData(data);
-      parksAtRiskLayer.bringToFront();
-    });
-  };
-
-  parksAtRisk(addParksAtRiskData);
-
-  parksAtRiskLayer.addTo(map);
-  // map.addLayer(parksAtRiskLayer);
+  map.addLayer(parksAtRiskLayer);
 });
