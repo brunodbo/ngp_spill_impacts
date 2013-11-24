@@ -645,7 +645,7 @@ html {
 #map {
   position: absolute;
   /*float: left;*/
-  /*top: 0;*/
+  top: 0;
   height: 100%;
   width: 100%;
   z-index: 7;
@@ -657,10 +657,8 @@ html {
   position: absolute;
   top: 2%;
   right: 1%;
-  height: 96%;
-  width: 32%;
+  width: 30%;
   border: 1px solid #999;
-  background-color: #FFFFFF;
   background-color: rgba(255, 255, 255, 0.9);
   padding-left: 1%;
   padding-right: 1%;
@@ -668,44 +666,44 @@ html {
   z-index: 10;
 }
 
-/* line 70, ../sass/style.scss */
+/* line 68, ../sass/style.scss */
 .sidebar_content {
   margin-top: 5px;
 }
 
 /* Pop-up information */
-/* line 76, ../sass/style.scss */
+/* line 74, ../sass/style.scss */
 .popup_box_header {
   font-size: 16px;
 }
 
-/* line 80, ../sass/style.scss */
+/* line 78, ../sass/style.scss */
 hr {
   margin: 5px 0 5px 0;
 }
 
-/* line 85, ../sass/style.scss */
+/* line 83, ../sass/style.scss */
 .leaflet-popup .popup-title {
   margin-bottom: 0;
 }
-/* line 88, ../sass/style.scss */
+/* line 86, ../sass/style.scss */
 .leaflet-popup p {
   margin: 0;
 }
 
 /* Credits */
-/* line 95, ../sass/style.scss */
+/* line 93, ../sass/style.scss */
 #credits {
   display: none;
 }
-/* line 97, ../sass/style.scss */
+/* line 95, ../sass/style.scss */
 #credits p {
   font-size: 9px;
 }
 
 /* 'About this map' button, description box */
 /* Mobile only */
-/* line 105, ../sass/style.scss */
+/* line 103, ../sass/style.scss */
 .toggle_description {
   display: none;
   z-index: 9;
@@ -715,7 +713,7 @@ hr {
   top: 0%;
 }
 
-/* line 114, ../sass/style.scss */
+/* line 112, ../sass/style.scss */
 .description_box_cover {
   display: none;
   z-index: 12;
@@ -727,7 +725,7 @@ hr {
   background-color: rgba(33, 33, 33, 0.9);
 }
 
-/* line 125, ../sass/style.scss */
+/* line 123, ../sass/style.scss */
 .description_box {
   position: absolute;
   display: none;
@@ -743,13 +741,13 @@ hr {
   background-color: rgba(255, 255, 255, 0.9);
   border: 1px solid #999;
 }
-/* line 139, ../sass/style.scss */
+/* line 137, ../sass/style.scss */
 .description_box h3 {
   padding-bottom: 0px;
   line-height: 15px;
 }
 
-/* line 145, ../sass/style.scss */
+/* line 143, ../sass/style.scss */
 .description_box_content {
   width: 96%;
   height: 80%;
@@ -757,24 +755,24 @@ hr {
   overflow: auto;
 }
 
-/* line 152, ../sass/style.scss */
+/* line 150, ../sass/style.scss */
 .x_button {
   width: 15px;
 }
 
 /* Styles for smaller screens */
 @media (max-width: 700px) {
-  /* line 158, ../sass/style.scss */
+  /* line 156, ../sass/style.scss */
   h2 {
     font-size: 24px;
   }
 
-  /* line 161, ../sass/style.scss */
+  /* line 159, ../sass/style.scss */
   h3 {
     font-size: 18px;
   }
 
-  /* line 164, ../sass/style.scss */
+  /* line 162, ../sass/style.scss */
   p {
     font-size: 13px;
   }
@@ -782,13 +780,13 @@ hr {
 /* Styles from mobile devices */
 @media (max-width: 625px) {
   /* Headers */
-  /* line 172, ../sass/style.scss */
+  /* line 170, ../sass/style.scss */
   h1, h2, h3 {
     line-height: 20px;
   }
 
   /* Map */
-  /* line 176, ../sass/style.scss */
+  /* line 174, ../sass/style.scss */
   #map {
     cursor: default;
     border: 0px solid #737373;
@@ -799,13 +797,13 @@ hr {
   }
 
   /* Social buttons */
-  /* line 185, ../sass/style.scss */
+  /* line 183, ../sass/style.scss */
   #share {
     display: none;
   }
 
   /* Sidebar */
-  /* line 189, ../sass/style.scss */
+  /* line 187, ../sass/style.scss */
   #sidebar {
     position: relative;
     border-width: 0 0 1px;
@@ -820,104 +818,104 @@ hr {
     width: 96%;
     height: auto;
   }
-  /* line 202, ../sass/style.scss */
+  /* line 200, ../sass/style.scss */
   #sidebar h3 {
     line-height: 15px;
     font-size: 20px;
   }
 
-  /* line 207, ../sass/style.scss */
+  /* line 205, ../sass/style.scss */
   .sidebar_content {
     display: none;
   }
 
-  /* line 210, ../sass/style.scss */
+  /* line 208, ../sass/style.scss */
   .description_box_header h3 {
     line-height: 25px;
   }
 
-  /* line 213, ../sass/style.scss */
+  /* line 211, ../sass/style.scss */
   .toggle_description {
     display: inline;
   }
 
   /* Leaflet controls */
-  /* line 217, ../sass/style.scss */
+  /* line 215, ../sass/style.scss */
   .leaflet-top {
     margin-top: 55px;
   }
 
-  /* line 220, ../sass/style.scss */
+  /* line 218, ../sass/style.scss */
   .leaflet-right {
     display: none;
   }
 
-  /* line 224, ../sass/style.scss */
+  /* line 222, ../sass/style.scss */
   .leaflet-container .leaflet-control-attribution, .leaflet-container .leaflet-control-scale {
     font-size: 10px;
   }
 
-  /* line 228, ../sass/style.scss */
+  /* line 226, ../sass/style.scss */
   .leaflet-bar {
     box-shadow: 0 0 0 rgba(0, 0, 0, 0.4);
   }
 }
 /* Special attributes for small, wide screens */
 @media (max-height: 500px) {
-  /* line 235, ../sass/style.scss */
+  /* line 233, ../sass/style.scss */
   #scroll_more {
     display: block;
   }
 
-  /* line 238, ../sass/style.scss */
+  /* line 236, ../sass/style.scss */
   .sidebar_content {
     height: 60%;
   }
 
-  /* line 241, ../sass/style.scss */
+  /* line 239, ../sass/style.scss */
   .description_box_content {
     height: 75%;
   }
 }
 @media (max-height: 400px) {
-  /* line 247, ../sass/style.scss */
+  /* line 245, ../sass/style.scss */
   #scroll_more {
     display: block;
   }
 
-  /* line 250, ../sass/style.scss */
+  /* line 248, ../sass/style.scss */
   .sidebar_content {
     height: 60%;
   }
 
-  /* line 253, ../sass/style.scss */
+  /* line 251, ../sass/style.scss */
   .description_box_content {
     height: 75%;
   }
 }
 @media (max-height: 320px) {
-  /* line 259, ../sass/style.scss */
+  /* line 257, ../sass/style.scss */
   .sidebar_content {
     height: 40%;
   }
 
-  /* line 262, ../sass/style.scss */
+  /* line 260, ../sass/style.scss */
   .description_box_content {
     height: 65%;
   }
 }
-/* line 267, ../sass/style.scss */
+/* line 265, ../sass/style.scss */
 .legend-title {
   margin-top: 0;
 }
 
-/* line 271, ../sass/style.scss */
+/* line 269, ../sass/style.scss */
 .legend-items {
   list-style-type: none;
   margin: 0;
 }
 
-/* line 276, ../sass/style.scss */
+/* line 274, ../sass/style.scss */
 .legend-icon {
   display: inline-block;
   margin-right: 15px;
@@ -926,7 +924,7 @@ hr {
   height: 10px;
 }
 
-/* line 285, ../sass/style.scss */
+/* line 283, ../sass/style.scss */
 .legend-risk .legend-icon {
   background: url(../img/marker_sm.png) no-repeat left top;
   height: 30px;
@@ -934,22 +932,22 @@ hr {
   margin-left: 0;
   margin-right: 10px;
 }
-/* line 292, ../sass/style.scss */
+/* line 290, ../sass/style.scss */
 .legend-risk .legend-label {
   vertical-align: top;
 }
 
-/* line 297, ../sass/style.scss */
+/* line 295, ../sass/style.scss */
 .legend-route .legend-icon {
   background-color: #122128;
 }
 
-/* line 301, ../sass/style.scss */
+/* line 299, ../sass/style.scss */
 .legend-park .legend-icon {
   background-color: #19851c;
 }
 
-/* line 305, ../sass/style.scss */
+/* line 303, ../sass/style.scss */
 .legend-source {
   /*margin-top: 10px;*/
 }
