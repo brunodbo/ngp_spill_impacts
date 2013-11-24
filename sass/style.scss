@@ -81,6 +81,15 @@ hr {
   margin: 5px 0 5px 0;
 }
 
+.leaflet-popup {
+  .popup-title {
+    margin-bottom: 0;
+  }
+  p {
+    margin: 0;
+  }
+}
+
 /* Credits */
 
 #credits {

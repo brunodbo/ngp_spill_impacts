@@ -684,19 +684,28 @@ hr {
   margin: 5px 0 5px 0;
 }
 
+/* line 85, ../sass/style.scss */
+.leaflet-popup .popup-title {
+  margin-bottom: 0;
+}
+/* line 88, ../sass/style.scss */
+.leaflet-popup p {
+  margin: 0;
+}
+
 /* Credits */
-/* line 86, ../sass/style.scss */
+/* line 95, ../sass/style.scss */
 #credits {
   display: none;
 }
-/* line 88, ../sass/style.scss */
+/* line 97, ../sass/style.scss */
 #credits p {
   font-size: 9px;
 }
 
 /* 'About this map' button, description box */
 /* Mobile only */
-/* line 96, ../sass/style.scss */
+/* line 105, ../sass/style.scss */
 .toggle_description {
   display: none;
   z-index: 9;
@@ -706,7 +715,7 @@ hr {
   top: 0%;
 }
 
-/* line 105, ../sass/style.scss */
+/* line 114, ../sass/style.scss */
 .description_box_cover {
   display: none;
   z-index: 12;
@@ -718,7 +727,7 @@ hr {
   background-color: rgba(33, 33, 33, 0.9);
 }
 
-/* line 116, ../sass/style.scss */
+/* line 125, ../sass/style.scss */
 .description_box {
   position: absolute;
   display: none;
@@ -734,13 +743,13 @@ hr {
   background-color: rgba(255, 255, 255, 0.9);
   border: 1px solid #999;
 }
-/* line 130, ../sass/style.scss */
+/* line 139, ../sass/style.scss */
 .description_box h3 {
   padding-bottom: 0px;
   line-height: 15px;
 }
 
-/* line 136, ../sass/style.scss */
+/* line 145, ../sass/style.scss */
 .description_box_content {
   width: 96%;
   height: 80%;
@@ -748,24 +757,24 @@ hr {
   overflow: auto;
 }
 
-/* line 143, ../sass/style.scss */
+/* line 152, ../sass/style.scss */
 .x_button {
   width: 15px;
 }
 
 /* Styles for smaller screens */
 @media (max-width: 700px) {
-  /* line 149, ../sass/style.scss */
+  /* line 158, ../sass/style.scss */
   h2 {
     font-size: 24px;
   }
 
-  /* line 152, ../sass/style.scss */
+  /* line 161, ../sass/style.scss */
   h3 {
     font-size: 18px;
   }
 
-  /* line 155, ../sass/style.scss */
+  /* line 164, ../sass/style.scss */
   p {
     font-size: 13px;
   }
@@ -773,13 +782,13 @@ hr {
 /* Styles from mobile devices */
 @media (max-width: 625px) {
   /* Headers */
-  /* line 163, ../sass/style.scss */
+  /* line 172, ../sass/style.scss */
   h1, h2, h3 {
     line-height: 20px;
   }
 
   /* Map */
-  /* line 167, ../sass/style.scss */
+  /* line 176, ../sass/style.scss */
   #map {
     cursor: default;
     border: 0px solid #737373;
@@ -790,13 +799,13 @@ hr {
   }
 
   /* Social buttons */
-  /* line 176, ../sass/style.scss */
+  /* line 185, ../sass/style.scss */
   #share {
     display: none;
   }
 
   /* Sidebar */
-  /* line 180, ../sass/style.scss */
+  /* line 189, ../sass/style.scss */
   #sidebar {
     position: relative;
     border-width: 0 0 1px;
@@ -811,104 +820,104 @@ hr {
     width: 96%;
     height: auto;
   }
-  /* line 193, ../sass/style.scss */
+  /* line 202, ../sass/style.scss */
   #sidebar h3 {
     line-height: 15px;
     font-size: 20px;
   }
 
-  /* line 198, ../sass/style.scss */
+  /* line 207, ../sass/style.scss */
   .sidebar_content {
     display: none;
   }
 
-  /* line 201, ../sass/style.scss */
+  /* line 210, ../sass/style.scss */
   .description_box_header h3 {
     line-height: 25px;
   }
 
-  /* line 204, ../sass/style.scss */
+  /* line 213, ../sass/style.scss */
   .toggle_description {
     display: inline;
   }
 
   /* Leaflet controls */
-  /* line 208, ../sass/style.scss */
+  /* line 217, ../sass/style.scss */
   .leaflet-top {
     margin-top: 55px;
   }
 
-  /* line 211, ../sass/style.scss */
+  /* line 220, ../sass/style.scss */
   .leaflet-right {
     display: none;
   }
 
-  /* line 215, ../sass/style.scss */
+  /* line 224, ../sass/style.scss */
   .leaflet-container .leaflet-control-attribution, .leaflet-container .leaflet-control-scale {
     font-size: 10px;
   }
 
-  /* line 219, ../sass/style.scss */
+  /* line 228, ../sass/style.scss */
   .leaflet-bar {
     box-shadow: 0 0 0 rgba(0, 0, 0, 0.4);
   }
 }
 /* Special attributes for small, wide screens */
 @media (max-height: 500px) {
-  /* line 226, ../sass/style.scss */
+  /* line 235, ../sass/style.scss */
   #scroll_more {
     display: block;
   }
 
-  /* line 229, ../sass/style.scss */
+  /* line 238, ../sass/style.scss */
   .sidebar_content {
     height: 60%;
   }
 
-  /* line 232, ../sass/style.scss */
+  /* line 241, ../sass/style.scss */
   .description_box_content {
     height: 75%;
   }
 }
 @media (max-height: 400px) {
-  /* line 238, ../sass/style.scss */
+  /* line 247, ../sass/style.scss */
   #scroll_more {
     display: block;
   }
 
-  /* line 241, ../sass/style.scss */
+  /* line 250, ../sass/style.scss */
   .sidebar_content {
     height: 60%;
   }
 
-  /* line 244, ../sass/style.scss */
+  /* line 253, ../sass/style.scss */
   .description_box_content {
     height: 75%;
   }
 }
 @media (max-height: 320px) {
-  /* line 250, ../sass/style.scss */
+  /* line 259, ../sass/style.scss */
   .sidebar_content {
     height: 40%;
   }
 
-  /* line 253, ../sass/style.scss */
+  /* line 262, ../sass/style.scss */
   .description_box_content {
     height: 65%;
   }
 }
-/* line 258, ../sass/style.scss */
+/* line 267, ../sass/style.scss */
 .legend-title {
   margin-top: 0;
 }
 
-/* line 262, ../sass/style.scss */
+/* line 271, ../sass/style.scss */
 .legend-items {
   list-style-type: none;
   margin: 0;
 }
 
-/* line 267, ../sass/style.scss */
+/* line 276, ../sass/style.scss */
 .legend-icon {
   display: inline-block;
   margin-right: 15px;
@@ -917,7 +926,7 @@ hr {
   height: 10px;
 }
 
-/* line 276, ../sass/style.scss */
+/* line 285, ../sass/style.scss */
 .legend-risk .legend-icon {
   background: url(../img/marker_sm.png) no-repeat left top;
   height: 30px;
@@ -925,22 +934,22 @@ hr {
   margin-left: 0;
   margin-right: 10px;
 }
-/* line 283, ../sass/style.scss */
+/* line 292, ../sass/style.scss */
 .legend-risk .legend-label {
   vertical-align: top;
 }
 
-/* line 288, ../sass/style.scss */
+/* line 297, ../sass/style.scss */
 .legend-route .legend-icon {
   background-color: #122128;
 }
 
-/* line 292, ../sass/style.scss */
+/* line 301, ../sass/style.scss */
 .legend-park .legend-icon {
   background-color: #19851c;
 }
 
-/* line 296, ../sass/style.scss */
+/* line 305, ../sass/style.scss */
 .legend-source {
   /*margin-top: 10px;*/
 }
