@@ -48,12 +48,13 @@ $(function() {
       color: '#ff0000',
       weight: 1,
       opacity: 0.4,
-      fillOpacity: 1
+      fillOpacity: 1,
+      clickable: false
     },
     onEachFeature: onEachFeature
   });
 
-  $.getJSON('js/parks_at_risk_data.json', function(data) {
+  $.getJSON('js/parks_at_risk_polygons_data.json', function(data) {
     parksAtRiskLayer.addData(data);
   });
 

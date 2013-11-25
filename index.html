@@ -30,11 +30,11 @@
 	<meta property="twitter:image" content="@TODO">
 
 	<!-- CSS -->
-	<link rel="stylesheet" href="http://api.tiles.mapbox.com/mapbox.js/v1.4.0/mapbox.css" />
+	<link rel="stylesheet" href="http://api.tiles.mapbox.com/mapbox.js/v1.5.0/mapbox.css" />
 	<link rel="stylesheet" href="css/style.css" />
 
   <!-- Javascript -->
-  <script type="text/javascript" src="http://api.tiles.mapbox.com/mapbox.js/v1.4.0/mapbox.js"></script>
+  <script type="text/javascript" src="http://api.tiles.mapbox.com/mapbox.js/v1.5.0/mapbox.js"></script>
   <script type="text/javascript" src="js/vendor/jquery/jquery-1.10.2.min.js"></script>
   <script type="text/javascript" src="js/vendor/topojson/topojson.js"></script>
 </head>
@@ -70,10 +70,11 @@
       <p>To figure out the risks that the pipeline poses to BC's parks and protected areas, the research team plotted park coordinates against the proposed pipeline route, and looked at the effects of pumping oil, bitumen or even condensate through the parks.</p>
       <p>Spilt oil can flow far downhill into streams and rivers, damaging spawning beds and fish habitat. Depending on the time and magnitude of the spill, the consequences could be serious, said Dr. Paul Paquet, the senior scientist with the Raincoast Conservation Foundation who oversaw the academic work on the paper.</p>
       <p>Studies like this are important, since the information on risk associated with the pipeline by Enbridge is limited, and based on a proprietary research model. Even more so, the federal government removed a lot of the environmental review processes that would normally need to be followed for projects like the Enbridge pipeline.</p>
-      <h3>Source</h3>
+      <h3>Sources:</h3>
       <ul>
           <li><a href="http://thetyee.ca/Blogs/TheHook/Environment/2012/04/24/Pipeline-Park-Risks/">Researchers map risks posed by Northern Gateway pipeline to BC parks</a>, <em>The Tyee</em>, April 24, 2012</li>
           <li><a href="http://www.raincoast.org/publications/scientific-papers/pipeline-spill-impacts/">Pipeline spill impacts to BC parks published in scientific journal</a>, <em>Raincoast Conservation Foundation</em>, October 22, 2012</li>
+          <li>Geodata: <a href="http://www.data.gov.bc.ca/dbc/catalogue/detail.page?config=dbc&P110=recorduid:173844">DataBC</a> and <a href="http://nominatim.openstreetmap.org/">OpenStreetMap</a></li>
       </ul>
   	</div>
 	</aside>
@@ -104,12 +105,12 @@
         <li class="legend-route"><span class="legend-icon"></span><span class="legend-label">Proposed pipeline route</span></li>
         <li class="legend-risk"><span class="legend-icon"></span><span class="legend-label">Protected area/park at risk in the event of a pipeline spill</span></li>
       </ul>
-    <div class="legend-source">Data source: <a href="http://www.raincoast.org/wp-content/uploads/Service-et-al-Enbridge-Pipeline-Parks-2012.pdf">Raincoast Conservation Foundation</a></div>
   </div>
 
   <script src="js/script.js"></script>
   <script src="js/parks.js"></script>
-  <script src="js/parks_at_risk.js"></script>
+  <script src="js/parks_at_risk_polygons.js"></script>
+  <script src="js/parks_at_risk_points.js"></script>
   <script src="js/route.js"></script>
 </body>
 </html>
