@@ -65,7 +65,7 @@ if ($(window).width() < 626) {
 // };
 
 $(function() {
-  var legendContent = $('#legend-content').html();
+  var legendContent = $('#legend').html();
   map.legendControl.addLegend(legendContent);
 });
 

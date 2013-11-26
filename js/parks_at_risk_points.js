@@ -35,12 +35,12 @@ $(function() {
   function add_parks_data(data) {
     var parksAtRiskMarkers = L.mapbox.markerLayer(data);
     parksAtRiskMarkers.setFilter(markerStyle);
-    parksAtRiskMarkers.on('mouseover', function(e) {
-      e.layer.openPopup();
-    });
-    parksAtRiskMarkers.on('mouseout', function(e) {
-        e.layer.closePopup();
-    });
+    // parksAtRiskMarkers.on('mouseover', function(e) {
+    //   e.layer.openPopup();
+    // });
+    // parksAtRiskMarkers.on('mouseout', function(e) {
+    //     e.layer.closePopup();
+    // });
     map.addLayer(parksAtRiskMarkers);
   }
 
