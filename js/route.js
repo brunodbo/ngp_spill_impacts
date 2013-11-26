@@ -8,16 +8,17 @@ $(function() {
   var routeStyle = {
     'color': routeColor,
     'weight': 3,
-    'opacity': 0.65
+    'opacity': 1,
+    'clickable': false
   };
   var popup = L.popup({closeButton: false})
     .setContent('<p>Proposed pipeline route</p>');
 
   function onEachFeature(feature, layer) {
-    layer.on({
-      mouseover: addHighlight,
-      mouseout: removeHighlight
-    });
+    // layer.on({
+    //   mouseover: addHighlight,
+    //   mouseout: removeHighlight
+    // });
   }
 
   function addHighlight(e) {
@@ -45,23 +46,6 @@ $(function() {
       layer.bringToFront();
     }
   }
-
-  // @TODO: Show popup at location of mouse, instead of centered on layer.
-  // function showPopup(e) {
-  //   var feature = e.target;
-  //   feature.bindPopup(popup).openPopup();
-  // }
-
-  // function removePopup(e) {
-  //   var feature = e.target;
-  //   feature.closePopup();
-  // }
-
-  // L.geoJson(route_layer, {
-  //   style: routeStyle,
-  //   onEachFeature: onEachFeature
-  // }).addTo(map);
-
 
   var routeLayer = L.geoJson(null, {
     style: routeStyle,

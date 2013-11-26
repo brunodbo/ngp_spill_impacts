@@ -2,9 +2,7 @@ $(function() {
 
   'use strict';
 
-  function onEachFeature(feature, layer) {
-    // var feature.properties.marker-symbol = "park";
-
+  function markerStyle(feature) {
     var parkName = feature.properties.park_name;
     var watershed = feature.properties.watershed;
     var ecoValue = feature.properties.eco_value;
@@ -15,8 +13,7 @@ $(function() {
     var pipelineDistance = feature.properties.pl_distance;
     var risk = feature.properties.risk;
 
-    var popupContent = '<h2 class="popup-title">' + parkName + '</h2>'
-    + '<p>' + '<strong>Primary watershed:</strong>' + ' ' + watershed + '</p>'
+    var popupContent = '<p>' + '<strong>Primary watershed:</strong>' + ' ' + watershed + '</p>'
     + '<p>' + '<strong>Ecological value:</strong>' + ' ' + ecoValue + '</p>'
     + '<p>' + '<strong>Area:</strong>' + ' ' + area + 'km<sup>2</sup>' + '</p>'
     + '<p>' + '<strong>Area to perimeter ration:</strong>' + ' ' + areaToPerim + '</p>'
@@ -24,36 +21,34 @@ $(function() {
     + '<p>' + '<strong>Flow:</strong>' + ' ' + flow + '</p>'
     + '<p>' + '<strong>Distance to pipeline:</strong>' + ' ' + pipelineDistance + '</p>'
     + '<p>' + '<strong>Risk index:</strong>' + ' ' + risk + '</p>';
-  
-    var popup = L.popup().setContent(popupContent);
-    layer.bindPopup(popup);
 
-    // console.log(feature.properties);
+    feature.properties.title = parkName;
+    feature.properties.description = popupContent;
 
-    // @TODO: Load center points for locations
-    // marker = new L.marker(feature.geometry.coordinates, {
-    //   icon: L.mapbox.marker.icon({
-    //     'marker-symbol': 'park',
-    //     // 'marker-size': 'large',
-    //     'marker-color': '#ff0000'
-    //   })
-    // });
+    feature.properties['marker-symbol'] = 'park';
+    feature.properties['marker-color'] = '#ff0000';
 
-    // marker.bindPopup(popup);
-
-    // // // Add marker to our to map
-    // // // map.addLayer(marker);
-    // layer.add(marker);
-
+    return true;
   }
 
-  var parksAtRiskMarkers = L.geoJson(null, {
-    onEachFeature: onEachFeature
-  });
+  // AJAX callback
+  function add_parks_data(data) {
+    var parksAtRiskMarkers = L.mapbox.markerLayer(data);
+    parksAtRiskMarkers.setFilter(markerStyle);
+    parksAtRiskMarkers.on('mouseover', function(e) {
+      e.layer.openPopup();
+    });
+    parksAtRiskMarkers.on('mouseout', function(e) {
+        e.layer.closePopup();
+    });
+    map.addLayer(parksAtRiskMarkers);
+  }
 
-  $.getJSON('js/parks_at_risk_points_data.json', function(data) {
-    parksAtRiskMarkers.addData(data);
-  });
+  function parks(add_parks_data) {
+    $.getJSON('js/parks_at_risk_points_data.json', function(data) {
+      add_parks_data(data);
+    });
+  }
 
-  map.addLayer(parksAtRiskMarkers);
+  parks(add_parks_data);
 });
