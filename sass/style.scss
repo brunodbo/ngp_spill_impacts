@@ -54,19 +54,39 @@ html {
 
 #sidebar {
   position: absolute;
-  top: 2%;
-  right: 1%;
+  top: 10px;
+  right: 10px;
   width: 30%;
-  @include single-box-shadow;
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 1%;
+  max-height: 60%;
   z-index: 10;
+  overflow-y: scroll;
+}
+
+.sidebar-inner {
+  padding: 10px;
 }
 
 .sidebar-title {
   margin: 0;
-  font-size: 1.75em;
-  line-height: 1.25em;
+  line-height: 1.5em;
+}
+
+#sidebar,
+.map-legend {
+  @include single-box-shadow;
+  $mapgrey: #e8e8e8;
+  $mapgrey-darker: #999;
+  background-color: hsla(hue($mapgrey-darker), saturation($mapgrey-darker), lightness($mapgrey-darker), 0.95);
+  color: white;
+  @include border-radius(2px);
+}
+
+.more-info-title {
+  margin-bottom: 0;
+}
+
+.more-info-list {
+  margin-top: 0;
 }
 
 /* Pop-up information */
@@ -256,12 +276,18 @@ html {
 }
 
 .leaflet-bottom { // Wrapper for legend and Mapbox info icon.
-  width: 20%;
+  width: 30%;
   .map-legends {
-    position: absolute;
-    bottom: 40px;
-    left: 5px;
+    width: 100%;
     font-size: 0.85em;
+  }
+}
+
+.leaflet-container {
+  @include font-ubuntu;
+  color: #333;
+  h5 {
+    margin-bottom: 0;
   }
 }
 
@@ -306,4 +332,8 @@ html {
 
 .legend-park .legend-icon {
   background-color: #19851c;
+}
+
+.marker-title {
+  font-size: $h3-font-size;
 }
