@@ -4,7 +4,10 @@ if ($(window).width() < 626) {
 } else {
   var map = L.mapbox.map('map', 'brunodbo.map-8dbz5o8v', {
     legendControl: {
-      position: 'bottomleft'
+      position: 'bottomright'
+    },
+    attributionControl: {
+      position: 'bottomright'
     }
   }).setView([54, -116.5], 6);
 }
@@ -65,7 +68,7 @@ if ($(window).width() < 626) {
 // };
 
 $(function() {
-  var legendContent = $('#legend-content').html();
+  var legendContent = $('#legend').html();
   map.legendControl.addLegend(legendContent);
 });
 

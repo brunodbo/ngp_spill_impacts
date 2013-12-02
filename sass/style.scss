@@ -54,29 +54,45 @@ html {
 
 #sidebar {
   position: absolute;
-  top: 2%;
-  right: 1%;
+  top: 10px;
+  right: 10px;
   width: 30%;
-  border: 1px solid #999;
-  background-color: rgba(255, 255, 255, 0.9);
-  padding-left: 1%;
-  padding-right: 1%;
-  padding-bottom: 1%;
+  max-height: 60%;
   z-index: 10;
+  overflow-y: scroll;
 }
 
-.sidebar_content {
-  margin-top: 5px;
+.sidebar-inner {
+  padding: 10px;
+}
+
+.sidebar-title {
+  margin: 0;
+  line-height: 1.5em;
+}
+
+#sidebar,
+.map-legend {
+  @include single-box-shadow;
+  $mapgrey: #e8e8e8;
+  $mapgrey-darker: #999;
+  background-color: hsla(hue($mapgrey-darker), saturation($mapgrey-darker), lightness($mapgrey-darker), 0.95);
+  color: white;
+  @include border-radius(2px);
+}
+
+.more-info-title {
+  margin-bottom: 0;
+}
+
+.more-info-list {
+  margin-top: 0;
 }
 
 /* Pop-up information */
 
 .popup_box_header {
   font-size: 16px;
-}
-
-hr {
-  margin: 5px 0 5px 0;
 }
 
 .leaflet-popup {
@@ -90,11 +106,8 @@ hr {
 
 /* Credits */
 
-#credits {
-  display: none;
-  p {
-    font-size: 9px;
-  }
+.credits {
+  font-size: 9px;
 }
 
 /* 'About this map' button, description box */
@@ -262,13 +275,34 @@ hr {
   }
 }
 
+.leaflet-bottom { // Wrapper for legend and Mapbox info icon.
+  width: 30%;
+  .map-legends {
+    width: 100%;
+    font-size: 0.85em;
+  }
+}
+
+.leaflet-container {
+  @include font-ubuntu;
+  color: #333;
+  h5 {
+    margin-bottom: 0;
+  }
+}
+
+
+.map-legend {
+  @include single-box-shadow;
+}
 .legend-title {
-  margin-top: 0;
+  margin: 0;
 }
 
 .legend-items {
   list-style-type: none;
   margin: 0;
+  padding: 0;
 }
 
 .legend-icon {
@@ -300,6 +334,6 @@ hr {
   background-color: #19851c;
 }
 
-.legend-source {
-  /*margin-top: 10px;*/
+.marker-title {
+  font-size: $h3-font-size;
 }
