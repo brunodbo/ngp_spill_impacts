@@ -40,9 +40,10 @@ $(function() {
       flickrPhoto = '';
     // Get Flickr photo.
     getFlickrPhotos(parkName).done(function(data) {
+      console.log(data);
       $.each(data.photos.photo, function(key, photo) {
         flickrPhoto += '<img src="' + 'http://farm' + photo.farm + '.staticflickr.com/' + photo.server + '/' + photo.id + '_' + photo.secret + '_n.jpg' + '" />';
-        flickrPhoto += '<cite>Photographer: ' + photo.ownername + '</cite>';
+        flickrPhoto += '<cite>Photographer: <a target="_blank" href="http://www.flickr.com/photos/' + photo.ownername + '/' + photo.id + '">' + photo.ownername + '</a></cite>';
       });
       popupContent += flickrPhoto;
       popupContent += markerPopup(feature);
