@@ -2,53 +2,54 @@ $(function() {
 
   'use strict';
 
+  var flickrApiKey = '37f987b3db22ad31b938468f9a30c250';
+  var getFlickrPhotos = function(location) {
+    var flickrApiUrl = 'http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=' + flickrApiKey + '&tags=' + location + '&text=' + location + '&sort=date-posted-desc' + '&content_type=1' + '&extras=owner_name' + '&per_page=1&format=json&nojsoncallback=1';
+    return $.getJSON(flickrApiUrl);
+  };
+
   function markerStyle(feature) {
-    var parkName = feature.properties.park_name;
-    var watershed = feature.properties.watershed;
-    var ecoValue = feature.properties.eco_value;
-    var area = feature.properties.area;
-    var areaToPerim = feature.properties.area_to_perim;
-    var pipelineLength = feature.properties.pl_length;
-    var flow = feature.properties.flow;
-    var pipelineDistance = feature.properties.pl_distance;
-    var risk = feature.properties.risk;
-
-    var popupContent = '<p>' + '<strong>Primary watershed:</strong>' + ' ' + watershed + '</p>'
-    + '<p>' + '<strong>Ecological value:</strong>' + ' ' + ecoValue + '</p>'
-    + '<p>' + '<strong>Area:</strong>' + ' ' + area + 'km<sup>2</sup>' + '</p>'
-    + '<p>' + '<strong>Area to perimeter ration:</strong>' + ' ' + areaToPerim + '</p>'
-    + '<p>' + '<strong>Length of pipeline:</strong>' + ' ' + pipelineLength + '</p>'
-    + '<p>' + '<strong>Flow:</strong>' + ' ' + flow + '</p>'
-    + '<p>' + '<strong>Distance to pipeline:</strong>' + ' ' + pipelineDistance + '</p>'
-    + '<p>' + '<strong>Risk index:</strong>' + ' ' + risk + '</p>';
-
-    feature.properties.title = parkName;
-    feature.properties.description = popupContent;
-
     feature.properties['marker-symbol'] = 'park';
     feature.properties['marker-color'] = '#ff0000';
 
     return true;
   }
 
-  // AJAX callback
-  function add_parks_data(data) {
-    var parksAtRiskMarkers = L.mapbox.markerLayer(data);
-    parksAtRiskMarkers.setFilter(markerStyle);
-    // parksAtRiskMarkers.on('mouseover', function(e) {
-    //   e.layer.openPopup();
-    // });
-    // parksAtRiskMarkers.on('mouseout', function(e) {
-    //     e.layer.closePopup();
-    // });
-    map.addLayer(parksAtRiskMarkers);
+  function markerPopup(feature) {
+    var popupContent = '<p>' + '<strong>Primary watershed:</strong>' + ' ' + feature.properties.watershed + '</p>'
+      + '<p>' + '<strong>Ecological value:</strong>' + ' ' + feature.properties.ecoValue + '</p>'
+      + '<p>' + '<strong>Area:</strong>' + ' ' + feature.properties.area + 'km<sup>2</sup>' + '</p>'
+      + '<p>' + '<strong>Area to perimeter ration:</strong>' + ' ' + feature.properties.areaToPerim + '</p>'
+      + '<p>' + '<strong>Length of pipeline:</strong>' + ' ' + feature.properties.pipelineLength + '</p>'
+      + '<p>' + '<strong>Flow:</strong>' + ' ' + feature.properties.flow + '</p>'
+      + '<p>' + '<strong>Distance to pipeline:</strong>' + ' ' + feature.properties.pipelineDistance + '</p>'
+      + '<p>' + '<strong>Risk index:</strong>' + ' ' + feature.properties.risk + '</p>';
+
+      return popupContent;
   }
 
-  function parks(add_parks_data) {
-    $.getJSON('js/parks_at_risk_points_data.json', function(data) {
-      add_parks_data(data);
+  var parksAtRiskMarkers = L.mapbox.markerLayer().addTo(map);
+  parksAtRiskMarkers.setFilter(markerStyle);
+  parksAtRiskMarkers.loadURL('js/parks_at_risk_points_data.json');
+  // Create custom popup content and bind popup to marker.
+  parksAtRiskMarkers.on('layeradd', function(e) {
+    var marker = e.layer,
+      feature = marker.feature,
+      parkName = feature.properties.park_name,
+      popupContent =  '<h2>' + parkName + '</h2>',
+      flickrPhoto = '';
+    // Get Flickr photo.
+    getFlickrPhotos(parkName).done(function(data) {
+      $.each(data.photos.photo, function(key, photo) {
+        flickrPhoto += '<img src="' + 'http://farm' + photo.farm + '.staticflickr.com/' + photo.server + '/' + photo.id + '_' + photo.secret + '_n.jpg' + '" />';
+        flickrPhoto += '<cite>Photographer: ' + photo.ownername + '</cite>';
+      });
+      popupContent += flickrPhoto;
+      popupContent += markerPopup(feature);
+      marker.bindPopup(popupContent, {
+        closeButton: true,
+        minWidth: 340
+      });
     });
-  }
-
-  parks(add_parks_data);
+  });
 });
