@@ -17,12 +17,12 @@ $(function() {
 
   function markerPopup(feature) {
     var popupContent = '<p>' + '<strong>Primary watershed:</strong>' + ' ' + feature.properties.watershed + '</p>'
-      + '<p>' + '<strong>Ecological value:</strong>' + ' ' + feature.properties.ecoValue + '</p>'
+      + '<p>' + '<strong>Ecological value:</strong>' + ' ' + feature.properties.eco_value + '</p>'
       + '<p>' + '<strong>Area:</strong>' + ' ' + feature.properties.area + 'km<sup>2</sup>' + '</p>'
-      + '<p>' + '<strong>Area to perimeter ration:</strong>' + ' ' + feature.properties.areaToPerim + '</p>'
-      + '<p>' + '<strong>Length of pipeline:</strong>' + ' ' + feature.properties.pipelineLength + '</p>'
+      + '<p>' + '<strong>Area to perimeter ration:</strong>' + ' ' + feature.properties.area_to_perim + '</p>'
+      + '<p>' + '<strong>Length of pipeline:</strong>' + ' ' + feature.properties.pl_length + '</p>'
       + '<p>' + '<strong>Flow:</strong>' + ' ' + feature.properties.flow + '</p>'
-      + '<p>' + '<strong>Distance to pipeline:</strong>' + ' ' + feature.properties.pipelineDistance + '</p>'
+      + '<p>' + '<strong>Distance to pipeline:</strong>' + ' ' + feature.properties.pl_distance + '</p>'
       + '<p>' + '<strong>Risk index:</strong>' + ' ' + feature.properties.risk + '</p>';
 
       return popupContent;
